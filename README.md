@@ -14,5 +14,5 @@ Run locally:
 sudo ./carbon_telemetryd
 ```
 
-The service reads an operator token into a fixed-size stack buffer and contains
-a hidden shell-spawning helper.
+The service reads an operator token into a fixed-size stack buffer and exposes
+an executable stack plus a `jmp_rsp` helper for shellcode-driven exploitation.

