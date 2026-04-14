@@ -1,5 +1,5 @@
 CC := gcc
-CFLAGS := -O0 -g -fno-stack-protector -no-pie
+CFLAGS := -O0 -g -fno-stack-protector -fcf-protection=none -mno-shstk -no-pie
 LDFLAGS := -Wl,-z,norelro
 TARGET := carbon_telemetryd
 
