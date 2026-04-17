@@ -79,7 +79,7 @@ static int create_server_socket(uint16_t port) {
     memset(&address, 0, sizeof(address));
     address.sin_family = AF_INET;
     address.sin_port = htons(port);
-    address.sin_addr.s_addr = htonl(INADDR_ANY);
+    address.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
 
     if (bind(fd, (struct sockaddr *) &address, sizeof(address)) != 0) {
         perror("bind");
